@@ -1,0 +1,272 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; 
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    background-color: #f7f7f7;
+}
+
+.cursor {
+    animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+ 
+#bg {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0; 
+}
+
+
+#bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Viewport width */
+    height: 100vh; /* Viewport height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+/* #bg-image {
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    z-index: 0;
+} */
+
+#painting-hover {
+    position: absolute;
+    left: 43%;
+    top: 30%;
+    height: 100px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7; 
+}
+
+#painting {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    /* left:500%;  */
+    z-index: 6;  
+    opacity:0;
+}
+
+#painting-hover:hover + #painting {
+    opacity: 1; 
+}
+
+/* cer */
+
+#cer-hover {
+    position: absolute;
+    left: 30%;
+    top: 43%;
+    height: 80px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7; 
+}
+
+#cer {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 6;  
+    opacity:0;
+
+}
+
+#cer-hover:hover + #cer {
+    opacity: 1; 
+}
+
+
+/* comp */
+
+#comp-hover {
+    position: absolute;
+    left: 25%;
+    top: 23%;
+    height: 80px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7; 
+}
+
+#comp {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 6;  
+    opacity:0;
+
+}
+
+#comp-hover:hover + #comp {
+    opacity: 1; 
+}
+
+/* graphic */
+
+#gra-hover {
+    position: absolute;
+    left: 32%;
+    top: 23%;
+    height: 100px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7; 
+}
+
+#gra {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 6; 
+    opacity:0;
+
+}
+
+#gra-hover:hover + #gra {
+    opacity: 1; 
+}
+
+/* night */
+
+#night-hover {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 420px;
+    width: 420px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7; 
+}
+
+#night {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2; 
+    opacity:0;
+
+}
+
+#night-hover:hover + #night {
+    opacity: 1; 
+}
+
+#thoughts-hover-area {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7;
+}
+
+#thoughts {
+    left: 55%;
+    top: 30%;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    z-index: 6;
+}
+
+#thoughts-hover-area:hover #thoughts {
+    opacity: 1;
+}
+
+
+
+/* cat */
+
+#cat-hover {
+    position: absolute;
+    left: 0%;
+    bottom: 5%;
+    height: 220px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0); 
+    z-index: 7; 
+}
+
+#cat {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 6;  
+    opacity:0;
+
+}
+
+#cat-hover:hover + #cat {
+    opacity: 1; 
+}
+
+@media (max-width: 480px) {
+    #bg-image {
+        background-size: 200%; 
+    }
+}
+
+
+
+#bg-text {
+    position: absolute;
+    width: 100%;
+    color: black; 
+    font-size: 18px;
+    z-index: 1;
+    pointer-events: none; 
+}
+
+#typewriter-text {
+    white-space: pre-wrap;
+}
+
+
+#reveal-eye {
+    position: absolute;
+    right: 50px;
+    bottom: 90px;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+#reveal-eye:hover {
+    content: url("assets/eyesopened.png");
+    transform: scale(1.05);
+}
+
+#reveal-eye:hover ~ #painting,
+#reveal-eye:hover ~ #cer,
+#reveal-eye:hover ~ #comp,
+#reveal-eye:hover ~ #gra,
+#reveal-eye:hover ~ #night,
+#reveal-eye:hover ~ #cat,
+#reveal-eye:hover ~ #thoughts-hover-area #thoughts {
+    opacity: 1 !important;
+}
